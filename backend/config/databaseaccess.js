@@ -1,12 +1,12 @@
 import mysql from 'mysql2';
 
 // crate the connection to the database
-const connection = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '123456',
-    database: 'taller-sce-sis',
-    port: 3308
+    database: 'taller_sce_sis',
+    port: 3309
 });
 
 export default db;

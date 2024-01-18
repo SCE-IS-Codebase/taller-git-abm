@@ -1,6 +1,6 @@
 -- Create Database
-CREATE DATABASE IF NOT EXISTS todolist_db;
-USE todolist_db;
+CREATE DATABASE IF NOT EXISTS taller_sce_sis;
+USE taller_sce_sis;
 
 -- Create person Table
 CREATE TABLE IF NOT EXISTS person (
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS tag (
     tag_id INT PRIMARY KEY AUTO_INCREMENT,
     tag_name VARCHAR(50) NOT NULL,
     person_id INT,
-    FOREIGN KEY (owner) REFERENCES person(person_id)
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
 );
 
 -- Create Task Table
@@ -25,5 +25,5 @@ CREATE TABLE IF NOT EXISTS task (
     tag_id INT,
     person_id INT,
     FOREIGN KEY (tag_id) REFERENCES tag(tag_id),
-    FOREIGN KEY (owner) REFERENCES person(person_id)
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
 );
