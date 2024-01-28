@@ -1,4 +1,5 @@
 // Import function from Person Model
+import e from "express";
 import { getPersons, getPersonById, getPersonByUsername, insertPerson, updatePersonById, deletePersonById } from "../dao/personDao.js";
 
 // Get All Persons
@@ -30,7 +31,10 @@ export const login = (req, res) => {
         if (err){
             res.send(err);
         } else {
-            if (results.person_password == data.person_password) {
+            if (results == null) {
+                //Send error message
+                res.send("Username not found");
+            } else if (results.person_password == data.person_password) {
                 res.json(results);
             } else {
                 res.send("Incorrect password");

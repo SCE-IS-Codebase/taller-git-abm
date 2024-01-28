@@ -26,6 +26,7 @@ export const getPersonById = (id, result) => {
 
 // Get Person by Username
 export const getPersonByUsername = (username, result) => {
+    console.log(username);
     db.query("SELECT * FROM person WHERE person_username = ?", [username], (err, results) => {             
         if(err) {
             console.log(err);
