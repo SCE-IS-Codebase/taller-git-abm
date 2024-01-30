@@ -25,6 +25,7 @@ watchEffect(() => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/tag">Tags</RouterLink>
         <RouterLink to="/login" @click="handleLoginClick">{{ loginText }}</RouterLink>
       </nav>
     </div>

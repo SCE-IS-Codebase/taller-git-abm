@@ -23,6 +23,7 @@ export default class LoginService {
     async signUp(createPersonRequest) {
         try {
             const response = await axios.post(this.url, createPersonRequest);
+            console.log(response.data);
             return await this.login({
                 person_username: createPersonRequest.person_username,
                 person_password: createPersonRequest.person_password

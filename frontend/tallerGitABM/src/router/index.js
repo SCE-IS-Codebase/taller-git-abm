@@ -19,6 +19,11 @@ const router = createRouter({
       component: () => import('../views/SignInView.vue')
     },
     {
+      path: '/tag',
+      name: 'tag',
+      component: () => import('../views/TagView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
