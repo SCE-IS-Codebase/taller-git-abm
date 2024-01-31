@@ -1,5 +1,6 @@
 // Import function from Task Model
 import { getTasks, getTaskById, getTasksByPersonId, insertTask, updateTaskById, deleteTaskById } from "../dao/taskDao.js";
+import { getTagById } from "../dao/tagDao.js";
 
 // Get All Tasks
 export const showTasks = (req, res) => {
@@ -29,6 +30,10 @@ export const showTasksByPersonId = (req, res) => {
         if (err){
             res.send(err);
         } else {
+            // format date in "yyyy-MM-dd" style
+            results.forEach(task => {
+                task.task_due_date = task.task_due_date.toISOString().slice(0, 10);
+            });
             res.json(results);
         }
     });

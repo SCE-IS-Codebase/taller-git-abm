@@ -26,7 +26,7 @@ export const getTaskById = (id, result) => {
 
 // Get Tasks by Person ID
 export const getTasksByPersonId = (id, result) => {
-    db.query("SELECT * FROM task WHERE person_id = ?", [id], (err, results) => {             
+    db.query("SELECT task.*, tag.tag_name FROM task INNER JOIN tag ON task.tag_id = tag.tag_id WHERE tag.person_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
