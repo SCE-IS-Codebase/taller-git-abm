@@ -11,21 +11,25 @@
             <button class="btn btn-light" type="submit" v-if="edit_mode">Editar</button>
         </form>
     </div>
-    <div>
-        <ul>
-            <li v-for="tag in tags" :key="tag.tag_id">
+    <div class="mt-4">
+        <ul class="list-group">
+            <li v-for="tag in tags" :key="tag.tag_id" class="list-group-item d-flex justify-content-between align-items-center">
                 {{ tag.tag_name }}
+                <div>
                 <button @click="
-                    edit_mode = true;
-                    name = tag.tag_name;
-                    editing_tag_id = tag.tag_id
-                    ">
+                            edit_mode = true;
+                            name = tag.tag_name;
+                            editing_tag_id = tag.tag_id
+                            " class="btn btn-warning btn-sm me-2">
                     Editar
                 </button>
-                <button @click="deleteTag(tag.tag_id)">Eliminar</button>
+                <button @click="deleteTag(tag.tag_id)" class="btn btn-danger btn-sm">
+                    Eliminar
+                </button>
+                </div>
             </li>
         </ul>
-    </div>
+    </div>      
 </template>
 <script>
 import TagService from '@/services/TagService.js'

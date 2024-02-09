@@ -25,23 +25,29 @@
             <button class="btn btn-light" type="submit" v-if="edit_mode">Editar</button>
         </form>
     </div>
-    <div>
-        <ul>
-            <li v-for="task in tasks" :key="task.task_id">
-                <b>{{task.task_due_date}}: </b>{{ task.task_description }} <span>#{{ task.tag_name }}</span>
+    <div class="mt-4">
+        <ul class="list-group">
+            <li v-for="task in tasks" :key="task.task_id" class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                <b>{{ task.task_due_date }}:</b> {{ task.task_description }} <span>#{{ task.tag_name }}</span>
+                </div>
+                <div>
                 <button @click="
-                    edit_mode = true;
-                    due_date = task.task_due_date;
-                    description = task.task_description;
-                    tag = task.tag_id;
-                    editing_task_id = task.task_id
-                    ">
+                            edit_mode = true;
+                            due_date = task.task_due_date;
+                            description = task.task_description;
+                            tag = task.tag_id;
+                            editing_task_id = task.task_id
+                            " class="btn btn-warning btn-sm me-2">
                     Editar
                 </button>
-                <button @click="deleteTask(task.task_id)">Eliminar</button>
+                <button @click="deleteTask(task.task_id)" class="btn btn-danger btn-sm">
+                    Eliminar
+                </button>
+                </div>
             </li>
         </ul>
-    </div>
+    </div>      
 </template>
 <script>
 import TaskService from '@/services/TaskService.js'
