@@ -1,19 +1,28 @@
 <template>
     <h2>Tasks</h2>
     <div>
-        <form @submit.prevent="edit_mode ? updateTask() : createTask()">
-            <label for="due_date">Fecha</label>
-            <input type="date" id="due_date" v-model="due_date" />
-            <label for="description">Descripción</label>
-            <input type="text" id="description" v-model="description" />
-            <label for="tag">Tag</label>
-            <select id="tag" v-model="tag">
-                <option v-for="tag in tags" :key="tag.tag_id" :value="tag.tag_id">
-                    {{ tag.tag_name }}
-                </option>
-            </select>
-            <button type="submit" v-if="!edit_mode">Crear</button>
-            <button type="submit" v-if="edit_mode">Editar</button>
+        <form @submit.prevent="edit_mode ? updateTask() : createTask" class="mt-4">
+            <div class="mb-3">
+                <label for="due_date" class="form-label">Fecha</label>
+                <input type="date" id="due_date" v-model="due_date" class="form-control" />
+            </div>
+        
+            <div class="mb-3">
+                <label for="description" class="form-label">Descripción</label>
+                <input type="text" id="description" v-model="description" class="form-control" />
+            </div>
+        
+            <div class="mb-3">
+                <label for="tag" class="form-label">Tag</label>
+                <select id="tag" v-model="tag" class="form-select">
+                    <option v-for="tag in tags" :key="tag.tag_id" :value="tag.tag_id">
+                        {{ tag.tag_name }}
+                    </option>
+                </select>
+            </div>
+        
+            <button class="btn btn-light" type="submit" v-if="!edit_mode">Crear</button>
+            <button class="btn btn-light" type="submit" v-if="edit_mode">Editar</button>
         </form>
     </div>
     <div>

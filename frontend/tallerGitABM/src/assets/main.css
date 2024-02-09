@@ -1,10 +1,9 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make sure the component takes full height of the viewport */
 }
 
 a,
@@ -27,8 +26,20 @@ a,
   }
 
   #app {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
+}
+
+header {
+  padding: 10px;
+}
+
+.container {
+  padding: 40px;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+h1, p {
+  color: #fff;
 }
