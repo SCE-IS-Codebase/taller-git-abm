@@ -1,14 +1,23 @@
 <template>
     <main>
         <h1>Sign In</h1>
-        <form @submit.prevent="signIn">
-            <label for="username">Username</label>
-            <input type="text" id="username" v-model="form_username" required>
-            <label for="password">Password</label>
-            <input type="password" id="password" v-model="form_password" required>
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" v-model="form_confirmPassword" required>
-            <button type="submit">Sign In</button>
+        <form @submit.prevent="signIn" class="mt-4">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" v-model="form_username" class="form-control" required />
+            </div>
+        
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" v-model="form_password" class="form-control" required />
+            </div>
+        
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" id="confirmPassword" v-model="form_confirmPassword" class="form-control" required />
+            </div>
+        
+            <button class="btn btn-light" type="submit">Sign In</button>
         </form>
     </main>
 </template>

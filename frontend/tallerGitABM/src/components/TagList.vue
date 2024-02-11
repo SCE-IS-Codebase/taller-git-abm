@@ -1,28 +1,35 @@
 <template>
     <h2>Tags</h2>
     <div>
-        <form @submit.prevent="edit_mode ? updateTag() : createTag()">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" v-model="name" />
-            <button type="submit" v-if="!edit_mode">Crear</button>
-            <button type="submit" v-if="edit_mode">Editar</button>
+        <form @submit.prevent="edit_mode ? updateTag() : createTag" class="mt-4">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" v-model="name" class="form-control" />
+            </div>
+        
+            <button class="btn btn-light" type="submit" v-if="!edit_mode">Crear</button>
+            <button class="btn btn-light" type="submit" v-if="edit_mode">Editar</button>
         </form>
     </div>
-    <div>
-        <ul>
-            <li v-for="tag in tags" :key="tag.tag_id">
+    <div class="mt-4">
+        <ul class="list-group">
+            <li v-for="tag in tags" :key="tag.tag_id" class="list-group-item d-flex justify-content-between align-items-center">
                 {{ tag.tag_name }}
+                <div>
                 <button @click="
-                    edit_mode = true;
-                    name = tag.tag_name;
-                    editing_tag_id = tag.tag_id
-                    ">
+                            edit_mode = true;
+                            name = tag.tag_name;
+                            editing_tag_id = tag.tag_id
+                            " class="btn btn-warning btn-sm me-2">
                     Editar
                 </button>
-                <button @click="deleteTag(tag.tag_id)">Eliminar</button>
+                <button @click="deleteTag(tag.tag_id)" class="btn btn-danger btn-sm">
+                    Eliminar
+                </button>
+                </div>
             </li>
         </ul>
-    </div>
+    </div>      
 </template>
 <script>
 import TagService from '@/services/TagService.js'

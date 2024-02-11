@@ -4,13 +4,13 @@
 </script>
 
 <template>
-    <main>
+    <main class="container">
         <LogIn v-if="have_an_account" />
         <SignUp v-else />
-        <div>
+        <div class="text-light">
             <span v-if="!have_an_account">Have an account? </span>
             <span v-else>Don't have an account? </span>
-            <button @click="have_an_account = !have_an_account">
+            <button @click="have_an_account = !have_an_account" class="btn btn-light">
                 {{ have_an_account ? 'Sign Up' : 'Log In' }}
             </button>
         </div>
@@ -26,5 +26,4 @@
         }
     }
 </script>
-
 
