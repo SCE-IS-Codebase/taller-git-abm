@@ -14,6 +14,9 @@
                 {{ have_an_account ? 'Sign Up' : 'Log In' }}
             </button>
         </div>
+        <footer class="mt-5">
+            <p class="text-center text-light">© 2024 Taller de Software. Hecho con ❤️ para futuros desarrolladores.</p>
+        </footer>
     </main>
 </template>
 
