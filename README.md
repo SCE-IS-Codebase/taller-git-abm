@@ -48,7 +48,7 @@ Se espera que los participantes tengan conocimientos previos con respecto a:
 Esta es una actividad organizada independientemente por los estudiantes de la Sociedad Científica Estudiantil de Ingeniería de Sistemas, como tal no tiene valor académico final, para miembros de la SCE quedará como parte de su participación en la sociedad.
 
 ## De la Licencia
-Este taller y todo su material pertenece a la Sociedad Científica Estudiantil de Ingeniería de Sistemas de la Universidad Católica Boliviana "San Pablo" en La Paz, Bolivia. Para mayor detalle por favor referirse al ![LICENSE.md](archivo de licencia).
+Este taller y todo su material pertenece a la Sociedad Científica Estudiantil de Ingeniería de Sistemas de la Universidad Católica Boliviana "San Pablo" en La Paz, Bolivia. Para mayor detalle por favor referirse al [archivo de licencia](LICENSE.md)
 
 ## Contactos
 Este taller fue posible gracias a:

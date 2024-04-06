@@ -1,20 +1,20 @@
 <template>
     <h2>Tasks</h2>
     <div>
-        <form @submit.prevent="edit_mode ? updateTask() : createTask" class="mt-4">
+        <form @submit.prevent="edit_mode ? updateTask() : createTask()" class="mt-4">
             <div class="mb-3">
                 <label for="due_date" class="form-label">Fecha</label>
-                <input type="date" id="due_date" v-model="due_date" class="form-control" />
+                <input type="date" id="due_date" v-model="due_date" class="form-control" required/>
             </div>
         
             <div class="mb-3">
                 <label for="description" class="form-label">Descripción</label>
-                <input type="text" id="description" v-model="description" class="form-control" />
+                <input type="text" id="description" v-model="description" class="form-control" required/>
             </div>
         
             <div class="mb-3">
                 <label for="tag" class="form-label">Tag</label>
-                <select id="tag" v-model="tag" class="form-select">
+                <select id="tag" v-model="tag" class="form-select" required>
                     <option v-for="tag in tags" :key="tag.tag_id" :value="tag.tag_id">
                         {{ tag.tag_name }}
                     </option>
@@ -85,6 +85,12 @@ export default {
                 tag_id: this.tag,
                 person_id: localStorage.getItem('person_id'),
             }
+
+            if (!new_task.person_id) {
+                alert('No hay usuario logueado')
+                return
+            }
+
             this.taskService
                 .createTask(new_task)
                 .then((response) => {
