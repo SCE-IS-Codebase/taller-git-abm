@@ -33,11 +33,12 @@ export const login = (req, res) => {
         } else {
             if (results == null) {
                 //Send error message
-                res.send("Username not found");
+                // devolver 400 con mensaje en json:
+                res.status(400).json({ message: "User not found" });
             } else if (results.person_password == data.person_password) {
                 res.json(results);
             } else {
-                res.send("Incorrect password");
+                res.status(400).json({ message: "Password Incorrect" });
             }
         }
     });
