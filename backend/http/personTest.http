@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "person_username": "jdoe",
-    "person_password": "pass word123"
+    "person_password": "password123"
 }
 
 ###
